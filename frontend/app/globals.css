@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+  .font-mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
+  }
+  :focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+.nextjs-dev-indicator,
+[data-nextjs-dialog-overlay] + div a[href*="nextjs"] {
+  display: none !important;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* GitHub icon: display as-is without filters */
+.github-corner-link img {
+  opacity: 1;
+}
+.github-corner-link:hover img,
+.github-corner-link:focus img {
+  opacity: 0.8;
+}
+
+/* Custom styles for ShortcutsModal components */
+.keycap-custom {
+  background-color: rgba(78, 79, 80, 0.9);
+  border-color: var(--tw-ring-offset-color);
+}
+
+.shortcuts-modal-custom {
+  border: 0px none rgba(0, 0, 0, 0);
+  background: unset;
+  opacity: 0.6;
+}

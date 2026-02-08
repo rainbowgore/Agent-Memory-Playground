@@ -1,0 +1,169 @@
+{
+  "strategies": {
+    "sequential": {
+      "class_name": "SequentialMemory",
+      "display_name": "Sequential Memory",
+      "icon": "scroll",
+      "color": "#8B5CF6",
+      "category": "Basic",
+      "complexity": "Simple",
+      "parameters": {}
+    },
+    "sliding_window": {
+      "class_name": "SlidingWindowMemory",
+      "display_name": "Sliding Window",
+      "icon": "window",
+      "color": "#3B82F6",
+      "category": "Basic",
+      "complexity": "Simple",
+      "parameters": {
+        "window_size": {
+          "type": "integer",
+          "default": 4,
+          "min": 1,
+          "max": 20,
+          "description": "Number of conversation turns to retain"
+        }
+      }
+    },
+    "summarization": {
+      "class_name": "SummarizationMemory",
+      "display_name": "Summarization Memory",
+      "icon": "doc",
+      "color": "#10B981",
+      "category": "Intermediate",
+      "complexity": "Moderate",
+      "parameters": {
+        "summary_threshold": {
+          "type": "integer",
+          "default": 4,
+          "min": 2,
+          "max": 20,
+          "description": "Messages before triggering summary"
+        }
+      }
+    },
+    "retrieval_rag": {
+      "class_name": "RetrievalMemory",
+      "display_name": "Retrieval (RAG) Memory",
+      "icon": "search",
+      "color": "#F59E0B",
+      "category": "Advanced",
+      "complexity": "Complex",
+      "parameters": {
+        "k": {
+          "type": "integer",
+          "default": 2,
+          "min": 1,
+          "max": 10,
+          "description": "Number of documents to retrieve"
+        },
+        "embedding_dim": {
+          "type": "integer",
+          "default": 1536,
+          "min": 384,
+          "max": 3072,
+          "description": "Embedding dimension"
+        }
+      }
+    },
+    "compression": {
+      "class_name": "CompressionMemory",
+      "display_name": "Compression Memory",
+      "icon": "compress",
+      "color": "#EF4444",
+      "category": "Advanced",
+      "complexity": "Complex",
+      "parameters": {
+        "compression_ratio": {
+          "type": "float",
+          "default": 0.5,
+          "min": 0.1,
+          "max": 0.9,
+          "description": "Target compression ratio"
+        },
+        "importance_threshold": {
+          "type": "float",
+          "default": 0.7,
+          "min": 0.0,
+          "max": 1.0,
+          "description": "Importance threshold for high-priority content"
+        }
+      }
+    },
+    "hierarchical": {
+      "class_name": "HierarchicalMemory",
+      "display_name": "Hierarchical Memory",
+      "icon": "tiers",
+      "color": "#8B5CF6",
+      "category": "Hybrid",
+      "complexity": "Complex",
+      "parameters": {
+        "window_size": {
+          "type": "integer",
+          "default": 2,
+          "min": 1,
+          "max": 10,
+          "description": "Working memory window size"
+        },
+        "k": {
+          "type": "integer",
+          "default": 2,
+          "min": 1,
+          "max": 10,
+          "description": "Long-term retrieval count"
+        },
+        "embedding_dim": {
+          "type": "integer",
+          "default": 1536,
+          "min": 384,
+          "max": 3072,
+          "description": "Embedding dimension"
+        }
+      }
+    },
+    "memory_augmented": {
+      "class_name": "MemoryAugmentedMemory",
+      "display_name": "Memory-Augmented",
+      "icon": "brain",
+      "color": "#EC4899",
+      "category": "Hybrid",
+      "complexity": "Moderate",
+      "parameters": {
+        "window_size": {
+          "type": "integer",
+          "default": 2,
+          "min": 1,
+          "max": 10,
+          "description": "Recent turns window size"
+        }
+      }
+    },
+    "graph_knowledge": {
+      "class_name": "GraphMemory",
+      "display_name": "Graph Knowledge Memory",
+      "icon": "graph",
+      "color": "#6366F1",
+      "category": "Advanced",
+      "complexity": "Very Complex",
+      "parameters": {}
+    },
+    "os_paging": {
+      "class_name": "OSMemory",
+      "display_name": "OS-Style Paging Memory",
+      "icon": "disk",
+      "color": "#14B8A6",
+      "category": "Intermediate",
+      "complexity": "Moderate",
+      "parameters": {
+        "ram_size": {
+          "type": "integer",
+          "default": 2,
+          "min": 1,
+          "max": 20,
+          "description": "RAM capacity in turns"
+        }
+      }
+    }
+  }
+}
