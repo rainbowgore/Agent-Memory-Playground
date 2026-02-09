@@ -2,7 +2,13 @@
 
 ![Agent Memory Playground](agent-memory-playground.png)
 
-Nine memory strategies. Two mischievous agents. One playground. No extra tokens to lose.
+Nine memory strategies.  
+Two mischievous agents.  
+One playground.  
+No extra tokens to lose.
+
+
+A playground for exploring how AI agents remember and forget over time. Compare two agents side by side, each powered by a different memory strategy: sequential, sliding window, summarization, RAG, graph, compression, hierarchical, memory-augmented, or OS-style paging.
 
 ## Quick Start
 
