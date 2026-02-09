@@ -6,7 +6,7 @@ Nine memory strategies. Two mischievous agents. One playground. No extra tokens 
 
 ## Quick Start
 
-- **Run:** `cp .env.example .env` (add keys), then `./start.sh`
+- **Run:** `cp .env.example .env` (add your API keys), then `./start.sh`
 - **Ports:** Backend 8000, frontend 3000
 - **Manual:** Backend `python3 api.py`; frontend `cd frontend && npm install && npm run dev`
 
@@ -18,6 +18,8 @@ Nine memory strategies. Two mischievous agents. One playground. No extra tokens 
 - **Dual Agent Comparison**: Run two agents side-by-side with different strategies
 - **Real-time Performance Metrics**: Track retrieval time, generation time, and token usage
 - **Interactive Dark UI**: Modern minimalist design with glassmorphism effects
+
+---
 
 ### Memory Strategies
 
@@ -51,7 +53,7 @@ Nine memory strategies. Two mischievous agents. One playground. No extra tokens 
 | `Cmd/Ctrl + K`             | Clear agent memory              |
 | `Cmd/Ctrl + /`             | Focus message input             |
 
-## Technology Stack
+## Tech Stack
 
 ### Backend
 
@@ -72,30 +74,24 @@ POST /api/agent/{id}/clear        # Clear agent memory
 DELETE /api/agent/{id}            # Delete agent
 ```
 
-## Usage
+## Using the Playground
 
-1. **Start both servers** (backend on 8000, frontend on 3000)
-2. **Configure Agent A**: Select "Sequential Memory" strategy
-3. **Configure Agent B**: Select "Sliding Window" strategy
-4. **Send the same message** to both agents
-5. **Compare responses** and observe memory behavior
-6. **Monitor metrics**: Check retrieval time, generation time, token usage
-7. **Try different strategies** to see how they handle long conversations
-
-### Using the Playground
-
-- **Config panel**: Use the config panel to choose memory strategy and model for Agent A and Agent B. Each agent can use a different strategy and model.
-- **Shared input**: One message input at the bottom sends to the focused agent. **Cmd/Ctrl + Enter** sends to that agent; **Cmd/Ctrl + Shift + Enter** sends the same message to both agents at once.
-- **Metrics**: Retrieval time, generation time, and token usage appear below each agent's chat so you can compare cost and latency.
-- **Backend offline**: If the UI shows "Backend offline", the frontend cannot reach the API. Start the backend first (e.g. `./start.sh` or `python api.py`) and ensure it is running on port 8000 (or set `NEXT_PUBLIC_API_URL` in `frontend/.env.local` to match).
+1. **Select agents and memory strategies**: Use the config panel to set the desired memory strategy and model for each agent (for example, Agent A: "Sequential Memory", Agent B: "Sliding Window").
+2. **Compose and send messages**: Enter a message in the input box. Use **Cmd/Ctrl + Enter** to send to the focused agent, or **Cmd/Ctrl + Shift + Enter** to send to both agents at once.
+3. **Observe agent responses**: Compare how each agent responds based on their configured memory strategies.
+4. **Explore agent memory**: Use the "Clear agent memory" shortcut (**Cmd/Ctrl + K**) as needed, and switch between strategies to see how memory impacts responses.
+5. **Monitor key metrics**: Track retrieval time, generation time, and token usage beneath each agent's chat to evaluate performance and efficiency of different strategies.
+6. **Experiment and iterate**: Try out various strategies, models, and message types to see how the UI and agents behave in different scenarios.
 
 ## Agent Performance
 
-The metrics area under each agent window will show:
+Once you start prompting, the metrics area under each agent window will show:
 
-- **Retrieval time** – Time to fetch context from memory (e.g. vector search for RAG, graph lookup) before the LLM runs.
-- **Generation time** – Time the LLM took to produce the reply.
-- **Token usage** – Prompt and completion tokens so you can compare strategies by latency and token use.
+| Metric              | Description                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------- |
+| **Retrieval time**  | Time to fetch context from memory (e.g. vector search for RAG, graph lookup) before the LLM runs. |
+| **Generation time** | Time the LLM took to produce the reply.                                                           |
+| **Token usage**     | Prompt and completion tokens so you can compare strategies by latency and token use.              |
 
 ###
 
@@ -103,4 +99,4 @@ The metrics area under each agent window will show:
 
 ###
 
-**Built for devs allergic to misbehaving agents**
+**Built for devs allergic to misbehaving agents 🎡**
